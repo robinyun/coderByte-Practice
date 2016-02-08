@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>notes</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+          var animals = [
+      { name: 'Fluffykins', species: 'rabbit' },
+      { name: 'Caro', species: 'dog' },
+      { name: 'Hamilton', species: 'dog' },
+      { name: 'Harold', species: 'fish' },
+      { name: 'Ursula', species: 'cat' },
+      { name: 'Jimmy', species: 'fish' }
+      ]
+
+      //callback function. filter will loop through each item in the array. for each item, it'll pass it into the callback function. when it passes through, it'll expect the callback function to either return true or false
+      var dogs = animals.filter(function(animal) {
+      return animal.species === 'dog';
+      });
+
+      //breakout the top function separately
+      var isDog = function(animal) {
+      return animal.species === 'dogs';
+      };
+
+      //filters for dogs
+      var dogs = animals.filter(isDog);
+      //filters for animals that aren't dogs
+      var otherAnimals = animals.reject(isDog);
+
+      //Simple for loop
+      // var dogs = [];
+      // for (var i = 0; i < animals.length; i++) {
+      //   if (animals[i].species === 'dog') {
+      //       dogs.push(animals[i]);
+      //   }
+      // };
+
+      //https://www.quora.com/What-is-a-simple-explanation-of-higher-order-functions-and-callbacks-in-JavaScript
+      //http://stackoverflow.com/questions/11900813/an-example-of-a-simple-higher-order-function-in-javascript
+      //https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q
+      //https://www.udemy.com/user/anthonypalicea/
+      //http://stackoverflow.com/questions/19619885/higher-order-functions-eloquent-js
+      //https://www.reddit.com/r/learnprogramming/comments/3kg8tv/can_anyone_help_me_understand_higher_order/
+
+      //function 1
+      var array = [1, 2, 3];
+
+      function logEach(array) {
+      for (var i = 0; i < array.length; i++) {
+      console.log(array[i]);
+      }
+      };
+
+      //If we want to do something other than logging elements.
+      function forEach(array, action) {
+      for (var i = 0; i < array.length; i++) {
+        action(array[i]);
+      }
+      }
+
+      forEach(["wampeter", "foma", "granfalloon"], console.log);
+      // -> wampeter
+      // -> foma
+      // -> granfalloon
+
+
+      var numbers = [1, 2, 3, 4, 5], sum = 0;
+      forEach(numbers, function(number) {
+      sum += number;
+      })
+      //loop through each iterate and add to 0
+      console.log(sum);
+      //-> 15
+
+      //map function
+      var animals = [
+      { name: 'Fluffykins', species: 'rabbit' },
+      { name: 'Caro', species: 'dog' },
+      { name: 'Hamilton', species: 'dog' },
+      { name: 'Harold', species: 'fish' },
+      { name: 'Ursula', species: 'cat' },
+      { name: 'Jimmy', species: 'fish' }
+      ]
+
+      //we want to get an array of all the names of the animals. Usually, we'd go with the for loop below
+      /*var names = [];
+      for (var i = 0; i < animals.length; i++) {
+      names.push(animals[i].name);
+      }
+
+      console.log(names);*/
+
+      //But we can use the map function. Map will take a callback function. The callback function will be passed into each items in the animals array. Map expects the callback function to return a transformed object that it will put into the new array instead of the original animal
+      var names = animals.map(function(animal) {
+      return animal.name
+      })
+
+      //ECMAScript 6 arrow functions
+      var names = animals.map((animal) => animal.name)
+
+      //REDUCE Basics
+      var orders = [
+        { amount: 250 },
+        { amount: 400 },
+        { amount: 100 },
+        { amount: 325 }
+      ]
+
+      //standard for loop to add all amount
+      var totalAmount = 0;
+      for (var i = 0; i < orders.length; i++) {
+        totalAmount += orders[i].amount;
+      }
+
+      //reduce
+      //takes a callback function(sum), orders is the iterated item.
+      var totalAmount = orders.reduce(function(sum, orders) {
+        return sum + order.amount
+        //object 0 is the starting point
+      }, 0)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title></title>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            document.getElementById('red').innerHTML = "This is red";
+            var num = 1;
+            var num2 = "2"
+            var total = num + num2
+
+            var obj = {
+                name: 'robin',
+                ethnicity: 'asian',
+                dude: function () {
+                  return this.ethnicity + ' ' + this.name;
+                }
+            };
+
+            // var obj = {
+            //     first_name: "Vijay",
+            //     last_name: "Menon",
+            // }
+            // var properties = [];
+            //
+            // var obj1 = obj.first_name;
+            // var obj2 = obj.last_name;
+            // properties.push(obj1);
+            // properties.push(obj2);
+
+            var arr2 = [{
+                  first_name: "Robin",
+                  last_name: "Yun",
+              },
+              {
+                  first_name: "Ashley",
+                  last_name: "Luu",
+              },
+              {
+                  first_name: "Sean",
+                  last_name: "Guiraid",
+              },
+              {
+                  first_name: "Steve",
+                  last_name: "Belovarich",
+              }];
+
+            var properties = [];
+
+            for (var i = 0; i < arr2.length; i++) {
+              properties.push(arr2[i].first_name + ' ' + arr2[i].last_name);
+            };
+            
+        });
+
+
+
+        </script>
+  </head>
+  <body>
+    <div id="red"></div>
+
+  </body>
+</html>

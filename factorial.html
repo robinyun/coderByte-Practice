@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Factorial</title>
+  </head>
+  <body>
+    <div>Enter a number below:</div>
+    <input id="factorial" type="text" name="name" placeholder="Enter a number">
+    <button id="submit">Submit</button>
+    <div>The answer is: <span id="answer"></span></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+    function FirstFactorial(num) {
+      if (num === 0) {
+        return 1;
+      } else {
+        return (num * FirstFactorial(num - 1));
+        //recursive loop
+      }
+      return num;
+    }
+
+    $('#submit').click(function(){
+      var num = $("#factorial").val();
+      if(num != null && num != "" && num >= 0 ) {
+        $('#answer').html(FirstFactorial(num));
+      } else {
+        alert('Please enter a whole number equal to or above 0');
+      }
+    });
+    </script>
+  </body>
+</html>

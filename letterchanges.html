@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reverse</title>
+  </head>
+  <body>
+    <div>Enter your name below:</div>
+    <input id="reverse" type="text" name="name" placeholder="Enter a name">
+    <button id="submit">Submit</button>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      str = 'fun times!';
+      function LetterChanges(str) {
+        // 1. Make variable for lower case letters.
+        var lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
+        var lowerLetterArray = lowerLetters.split("");
+        // 2. Make variable for upper case letters.
+        var upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var upperLetterArray = upperLetters.split("");
+        // 3. Make variable to break string into array. str.split("")
+        var arr = str.split("");
+        var arr2 = [];
+        var str2 = '';
+        // 4. Find the index of the array and increment to the next alphabet from the array of alphabets
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === 'z') {
+            break;
+          }
+          if (lowerLetterArray.indexOf(arr[i]) > -1){
+            var letter = lowerLetterArray[lowerLetterArray.indexOf(arr[i]) + 1];
+            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+              arr2.push(letter.toUpperCase());
+
+            }else {
+              arr2.push(letter);
+            }
+          }else {
+            arr2.push(arr[i]);
+          }
+        }
+        str2 = arr2.join('');
+
+
+        return str2;
+
+      }
+    //  console.log(LetterChanges(str));
+      console.log(LetterChanges(str));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Longest Word</title>
+  </head>
+  <body>
+    <div>Enter a sentence below:</div>
+    <input id="longest" type="text" name="name" placeholder="Enter a sentence">
+    <button id="submit">Submit</button>
+    <div>The longest word is: <span id="answer"></span></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    function LongestWord(sen) {
+      //remove punctuation
+      var str = sen.replace(/[^\w ]/g,':-)')
+
+      //split the strings where the space is
+      var words = str.split(' ');
+
+      var longestLength = 0;
+      var longest;
+
+      for (var i = 0; i < words.length; i++) {
+        if (words[i].length > longestLength) {
+          longestLength = words[i].length;
+          longest = words[i];
+        }
+      }
+
+      return longest;
+    }
+
+    $('#submit').click(function() {
+      var sen = $('#longest').val();
+      if(sen != null && sen != "") {
+        $('#answer').html(LongestWord(sen));
+      } else {
+        alert('Please enter a value');
+      }
+    });
+
+    </script>
+  </body>
+</html>

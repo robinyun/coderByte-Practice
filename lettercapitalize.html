@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reverse</title>
+  </head>
+  <body>
+    <div>Enter your name below:</div>
+    <input id="reverse" type="text" name="name" placeholder="Enter a name">
+    <button id="submit">Submit</button>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    function LetterCapitalize(str) {
+      //split the string into an array where the spaces are
+      var arr = str.split(' ');
+      //make empty array
+      var arr2 = [];
+
+      for (var i = 0; i < arr.length; i++) {
+        //Find first character of array and capitalize
+        var firstLetter = arr[i].charAt(0).toUpperCase();
+        //Push into the empty array the capitalized letter and the string, but cut out the first letter in the string
+        arr2.push(firstLetter + arr[i].slice(1));
+      }
+      //return arrays into a string by joining with space
+      return arr2.join(' ');
+
+    }
+
+    alert(LetterCapitalize("vijay menon"));
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Reverse</title>
+    </head>
+    <body>
+      <div>Enter your name below:</div>
+      <input id="reverse" type="text" name="name" placeholder="Enter a name">
+      <button id="submit">Submit</button>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script>
+      var string = 'robin';
+      function firstReverse(str) {
+        var string2 = [];
+
+        for (var i = string.length; i >= 0; i--) {
+          string2.push(str[i]);
+        }
+        string2 = string2.join("");
+        string2 = string2.toString();
+        return string2;
+      }
+
+      $('#submit').click(function(){
+        var str = $("#reverse").val();
+        if(str != null && str !=  ""){
+          alert(firstReverse(str));
+        }else {
+          alert('Please enter a name');
+        }
+
+      });
+      </script>
+    </body>
+  </html>

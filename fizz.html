@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+    <body>
+      <!-- Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz” -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(document).ready(function(){
+        function createArray(size){
+          // var size = 100;
+          var arr = [];
+          for (var i = 50; i <= size; i++) {
+             arr.push(i);
+          }
+          return arr;
+        };
+
+        var arr2 = createArray(100);
+        console.log(arr2);
+
+        for (var i = 1; i <= 100; i++) {
+          // console.log(i);
+          // console.log(arr2[i]);
+          if (arr2[i]%3 == 0 && i%5 == 0) {
+            console.log(arr2[i] + ' = ' + 'FizzBuzz');
+          }
+          else if (arr2[i]%3 == 0) {
+           console.log(arr2[i] + ' = ' + 'fizz');
+          }
+          else if (arr2[i]%5 == 0) {
+            console.log(arr2[i] + ' = ' + 'buzz');
+          } else {
+            console.log(arr2[i]);
+          }
+        }
+      });
+    </script>
+    </body>
+</html>

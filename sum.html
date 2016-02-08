@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sum</title>
+  </head>
+  <body>
+    <div>Enter a number below:</div>
+    <input id="sum" type="text" name="name" placeholder="Enter a number">
+    <button id="submit">Submit</button>
+    <div>The sum is: <span id="answer"></span></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+
+    function SimpleAdding(num) {
+      var sum = 0;
+
+      for (var i = 1; i <= num; i++) {
+        sum += i; //sum = sum + i
+      }
+      return sum;
+    }
+
+    $('#submit').click(function() {
+      var num = $('#sum').val();
+      if (num != null && num != "") {
+        $('#answer').html(SimpleAdding(num));
+      } else {
+        alert('Please enter a number');
+      }
+    })
+
+    </script>
+  </body>
+</html>
